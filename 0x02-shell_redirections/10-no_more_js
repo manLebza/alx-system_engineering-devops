@@ -1,2 +1,2 @@
 #!/bin/bash
-rd "*.js" /s/q Foldername
+find -name "*.js" -delete
