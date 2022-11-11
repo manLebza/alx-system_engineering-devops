@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#Script displays messages when read some signals
+echo $$> /var/run/
+trap 'echo "I hate the kill command"; rm -rf /var/run/ ; exit' SIGTERM
+trap 'echo "Y U no love me?"' SIGINT
+trap 'rm -rf /var/run/ ; exit' SIGQUIT
+while :
+do
+	echo "To inifinty and beyond"
+	sleep 2
+done
