@@ -6,7 +6,7 @@ do
 	echo "Best School"
 	if [ $x -eq 9 ]
 	then
-		echo "Hi"
+		echo "hi"
 	fi
 	((x++))
 done
