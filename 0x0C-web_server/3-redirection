@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#This script installs Nginx server and redirects /redirect_me
+apt-get -y update
+apt-get -y install nginx
+echo "301 Moved Permanently" > /var/www/html/index.nginx-derbian.html
+sed -i "s/server_name_;/server_name_;\n\trewrite ^\/redirect_me
+https:\/\/github.com\/manlebza permanent;/" /etc/nginx/sites-available/default
+service nginx start
