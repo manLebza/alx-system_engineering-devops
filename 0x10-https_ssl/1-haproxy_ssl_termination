@@ -40,7 +40,7 @@ frontend firstbalance
         default_backend webservers
 
 frontend www-https
-        bind *:433 ssl crt /etc/haproxy/ssl/www.manlebza.pem
+        bind *:433 ssl crt /etc/haproxy/ssl/www.manlebza.tech.pem
 	http-request set-header X-Forwarded-Proto https
 	default_backend webservers
 
