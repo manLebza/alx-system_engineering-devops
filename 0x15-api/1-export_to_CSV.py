@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 ''' Script uses JSON placeholder API to fetch Employee information of user '''
-import CSV
+import csv
 import requests
 import sys
 
@@ -8,20 +8,20 @@ import sys
 if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com/'
 
-    userId = sys.argv[1]
-    user = '{}users/{}'.format(url, userId)
+    userid = sys.argv[1]
+    user = '{}users/{}'.format(url, userid)
     res = requests.get(user)
     json_o = res.json()
     name = json_o.get('username')
 
-    todos = '{}todos?userId={}'.format(url, userId)
+    todos = '{}todos?userId={}'.format(url, userid)
     res = requests.get(todos)
     tasks = res.json()
     l_task = []
     for task in tasks:
-        l_task.append([userId, name, task.get('completed'),
+        l_task.append([userid, name, task.get('completed'),
                       task.get('title')])
-        filename = '{}.csv'.format(userId)
+        filename = '{}.csv'.format(userid)
         with open(filename, mode='w') as employee_file:
             employee_writer = csv.writer(employee_file, delimiter=',',
                                          quotechar='"', quoting=csv.QUOTE_ALL)

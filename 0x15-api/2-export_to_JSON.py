@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Script uses JSON placeholder API to fetch Employee information of user """
+""" Script uses JSON Placeholder API to fetch Employee information of user """
 import json
 import requests
 import sys
@@ -8,13 +8,13 @@ import sys
 if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com/'
 
-    userId = sys.argv[1]
-    user = '{}users/{}'.format(url, userId)
+    userid = sys.argv[1]
+    user = '{}users/{}'.format(url, userid)
     res = requests.get(user)
     json_o = res.json()
     name = json_o.get('username')
 
-    todos = '{}todos?userId={}'.format(url, userId)
+    todos = '{}todos?userId={}'.format(url, userid)
     res = requests.get(todos)
     tasks = res.json()
     l_task = []
@@ -24,7 +24,7 @@ if __name__ == "__main__":
                      "username": name}
         l_task.append(dict_task)
 
-    d_task = {str(userId): l_task}
-    filename = '{}json'.format(userId)
+    d_task = {str(userid): l_task}
+    filename = '{}json'.format(userid)
     with open(filename, mode='w') as f:
         json.dump(d_task, f)

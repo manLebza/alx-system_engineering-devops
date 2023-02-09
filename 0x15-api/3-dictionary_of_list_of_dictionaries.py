@@ -16,7 +16,7 @@ if __name__ == "__main__":
         userId = user.get('id')
         todos = '{}todos?userId={}'.format(url, userId)
         res = requests.get(todos)
-        task = res.json()
+        tasks = res.json()
         l_task = []
         for task in tasks:
             dict_task = {"username": name,
