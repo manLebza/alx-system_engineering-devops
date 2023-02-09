@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Script uses JSON placeholder API to get Employee information from user """
+""" Script uses JSON placeholder API to fetch Employee information of user """
 import json
 import requests
 import sys
