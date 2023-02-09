@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ Script uses JSON Placeholder API to fetch information about a employee """
 import json
-import sys
 import requests
+import sys
 
 
 if __name__ == "__main__":
