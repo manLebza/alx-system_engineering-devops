@@ -21,7 +21,7 @@ if __name__ == "__main__":
     for task in tasks:
         dict_task = {"task": task.get('title'),
                      "completed": task.get('completed')
-                     "username": name}
+                     "username": task.get('name')}
         l_task.append(dict_task)
 
     d_task = {str(userid): l_task}
